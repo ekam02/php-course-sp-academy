@@ -201,6 +201,7 @@ comentario, dos barras diagonales (o Slash) `//` o un numeral
 
 ``` php
 // Esto es un comentario de línea
+# Esto es otro comentario de línea
 ```
 
 Los comentario de varias líneas en PHP se crean anteponiendo los caracteres:
@@ -408,7 +409,7 @@ Representan los operadores usados en las áreas de las matemáticas; sin embargo
 algunos caractes (o secuencias de caracteres) son diferentes.
 
 | Operador | Función                                                        |
-|:--------:|:--------------------------------------------------------------:|
+|---------:|:---------------------------------------------------------------|
 | `+`      | *Adición*: Suma dos o más números                              |
 | `-`      | *Sustracción*: Resta dos o más números                         |
 | `*`      | *Multiplicación*: Multiplica dos o más números                 |
@@ -423,7 +424,7 @@ algunos caractes (o secuencias de caracteres) son diferentes.
 Son usados en PHP para la comparación entre valores
 
 | Operador | Descripción         |
-|:--------:|:-------------------:|
+|---------:|:--------------------|
 | `==`     | *Igual a*           |
 | `===`    | *Idéntico a*        |
 | `!=`     | *Diferente de*      |
@@ -603,7 +604,7 @@ A continuación, comparto una tabla resumiendo un poco la información de estos
 operadores.
 
 | Operador | Descripción      |
-|:--------:|:----------------:|
+|---------:|:-----------------|
 | `=`      | *Asignación*     |
 | `+=`     | *Incremento*     |
 | `++`     | *Incremento*     |
