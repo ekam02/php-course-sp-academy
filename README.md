@@ -148,7 +148,7 @@ para iniciar el servidor de Apache.
 
 <img src="./img/localhost 2021-12-29_201225.png" alt="Ingreso a la consola interactiva." />
 
-## Habilitando Errores *<sup><small>\[LINUX\]</small></sup>
+## Habilitando Errores *<sup><small>\[LINUX\]</small></sup>*
 
 Por defecto el interprete de PHP no muestra errores; para mostrarlos se busca
 el atributo `display_errors` del archivo `php.ini` en el directorio
@@ -177,7 +177,7 @@ más.
 
 Para concatenar texto y operaciones use el caracter `.`
 
-### `echo`
+## Función `echo`
 
 Es la función que ayuda a imprimir en la terminal el texto o el resultado de
 alguna operación entregada.
@@ -192,6 +192,28 @@ Tenga en cuenta que la función `echo` no termina con saltos de líneas, por lo
 que deberá agregarlas; para agregarla es necesario escribir `\n` cuando se
 trata de texto impreso por terminal o sobre un archivo de texto plano, o la
 etiqueta de salto de línea `<br/>` para imprimir documentos HTML.
+
+## Comentarios
+
+Los comentarios de línea en PHP se crean usando, al principio de cada
+comentario, dos barras diagonales (o Slash) `//` o un numeral
+(o almohadilla/Sharp) `#`.
+
+``` php
+// Esto es un comentario de línea
+```
+
+Los comentario de varias líneas en PHP se crean anteponiendo los caracteres:
+barra diagonal y asterisco `/*`. Y finalizan invirtiendo estos caracteres:
+asterisco y barra diagonal `*/`.
+
+``` php
+/*
+Esto es un
+comentario de varias
+líneas.
+*/
+```
 
 ## Constantes y Variables
 
@@ -227,6 +249,14 @@ esta. Por convención se espera que el nombre sea en mayúsculas.
 ``` PHP
 define("NUMERO_E", 2.7183);
 echo NUMERO_E;  // float(2.7183)
+```
+
+A partir de la version 5.3.0 para definir una constante se puede utilizar la
+palabra reservada `const` seguido de el nombre de la constante.
+
+``` php
+const NUMERO_PI = 3.1416;
+echo NUMERO_PI;  // float(3.1416)
 ```
 
 Para usar las constantes, no hay necesidad de anteponer el signo `$`.
@@ -314,9 +344,9 @@ falsedad.
 
 La evaluación de expresiones se pueden reducir a las *tablas de verdad*; las
 cuales operan sobre expresiones de dos afirmaciones. PHP usa los operadores
-`and` y `or` para las tablas de verdad $y$ y $o$ respectivamente.
+`and` y `or` para las tablas de verdad 'y' y 'o' respectivamente.
 
-### *Tabla de verdad $y$ (`and`)*
+### *Tabla de verdad 'y' (`and`)*
 
 Use el operador `and` para comprobar, sí ambas afirmaciones en una expresión
 son verdad toda la expresión es verdad, pero sí una de las afirmaciones es
@@ -329,7 +359,7 @@ falsa toda la expresión es falsa.
 | `false` | `and`    | `true`  | `false`   |
 | `false` | `and`    | `false` | `false`   |
 
-### *Tabla de verdad $o$ (`or`)*
+### *Tabla de verdad 'o' (`or`)*
 
 Use el operador `or` para comprobar, sí al menos una de las afirmaciones en una
 expresión es verdad toda la expresión es verdad, pero sí ambas afirmaciones son
@@ -342,10 +372,10 @@ falsas toda la expresión es falsa.
 | `false` | `or`     | `true`  | `true`    |
 | `false` | `or`     | `false` | `false`   |
 
-PHP también soporta los operadores `&&` y `||` para las evaluaciones $y$ y $o$
+PHP también soporta los operadores `&&` y `||` para las evaluaciones 'y' y 'o'
 respectivamente.
 
-### *Tabla de verdad $y$ (`&&`)*
+### *Tabla de verdad 'y' (`&&`)*
 
 | Valor   | Operador | Valor   | Resultado |
 |:-------:|:--------:|:-------:|:---------:|
@@ -354,7 +384,7 @@ respectivamente.
 | `false` | `&&`     | `true`  | `false`   |
 | `false` | `&&`     | `false` | `false`   |
 
-### *Tabla de verdad $o$ (`||`)*
+### *Tabla de verdad 'o' (`||`)*
 
 | Valor   | Operador | Valor   | Resultado |
 |:-------:|:--------:|:-------:|:---------:|
@@ -365,9 +395,275 @@ respectivamente.
 
 ### *Operador de negación (`not`)*
 
-Para negar o invertir el valor de una afirmación se usa el operador $no$ (`!`).
+Para negar o invertir el valor de una afirmación se usa el operador 'no' (`!`).
 
 | Operador | Valor   | Resultado |
 |:--------:|:-------:|:---------:|
 | `!`      | `true`  | `false`   |
 | `!`      | `false` | `true`    |
+
+## Operadores aritméticos
+
+Representan los operadores usados en las áreas de las matemáticas; sin embargo,
+algunos caractes (o secuencias de caracteres) son diferentes.
+
+| Operador | Función                                                        |
+|:--------:|:--------------------------------------------------------------:|
+| `+`      | *Adición*: Suma dos o más números                              |
+| `-`      | *Sustracción*: Resta dos o más números                         |
+| `*`      | *Multiplicación*: Multiplica dos o más números                 |
+| `/`      | *División*: Divide y regresa el cociente                       |
+| `%`      | *Módulo*: Divide y regresa el residuo                          |
+| `**`     | *Potenciación*: Eleva un número al exponente dato              |
+| `+`      | *Identidad*: Convierte un `string` a un tipo de datos numérico |
+| `-`      | *Negación*: Cambia el signo de un número                       |
+
+## Operadores relacionales
+
+Son usados en PHP para la comparación entre valores
+
+| Operador | Descripción         |
+|:--------:|:-------------------:|
+| `==`     | *Igual a*           |
+| `===`    | *Idéntico a*        |
+| `!=`     | *Diferente de*      |
+| `<>`     | *Diferente de*      |
+| `!==`    | *No idéntico a*     |
+| `>`      | *Mayor que*         |
+| `>=`     | *Mayor o igual que* |
+| `<`      | *Menor que*         |
+| `<=`     | *Menor o igual que* |
+| `<=>`    | *Nave espacial*     |
+| `??`     | *Fusión de null*    |
+
+``` php
+/** 
+ * devuelve 'true' si $a es igual a $b después de la manipulación de tipos.
+ */
+$a == $b
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a es igual a $b, y son del mismo tipo.
+ */
+$a === $b  
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a no es igual a $b después de la manipulación de tipos.
+ */
+$a != $b  
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a no es igual a $b después de la manipulación de tipos.
+ */
+$a <> $b  
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a no es igual a $b, o si no son del mismo tipo.
+ */
+$a !== $b  
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a es estrictamente menor que $b.
+ */
+$a < $b
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a es estrictamente mayor que $b.
+ */
+$a > $b
+```
+
+``` php
+/** 
+ * devuelve 'true' si $a es menor o igual que $b.
+ */
+$a <= $b
+```
+
+``` php
+/** 
+ * devuelve 'true' $a es mayor o igual que $b.
+ */
+$a >= $b
+```
+
+``` php
+/** 
+ * Un integer menor que, igual a, o mayor que cero cuando $a es respectivamente
+ * menor que, igual a, o mayor que $b.
+ */
+$a <=> $b
+
+echo 20 <=> 30;  // -1
+echo 25 <=> 25;  // 0
+echo 33 <=> 12;  // 1
+```
+
+``` php
+/** 
+ * El primer operando de izquierda a derecha que exista y no sea null. null si
+ * no hay valores definidos y no son null.
+ */
+$a ?? $b ?? $c
+
+$edad_1 = 28;  // apunta al valor 28
+$edad_2;  // apunta a null
+echo $edad_1 ?? $edad_2;  // toma la variable que tiene valor y lo imprime : 28
+```
+
+## Otros operadores
+
+El operador de *Asignación*, representado por el signo `=`, se usa para indicar
+al intérprete que un determinado identificador deberá apuntar a un valor en
+memoria.
+
+``` php
+$estatura = 1.65;
+$talla = "XS";
+$instrumento = "Bambuco";
+```
+
+El operador de *Incremento*, representado por la secuencia `+=`, se usa para
+simplificar la asignación de una adición sobre la misma variable.
+
+``` php
+$index = 0;
+$index += 10;  // Equivale a la sentencia '$index = $index + 10;'
+```
+
+El operador de *Incremento unitario*, representado por la secuencia `++`, se
+usa para simplificar la asignación de una adición unitaria sobre la misma
+variable. Sin embargo, si el operador se encuentra a la izquierda de la
+variable, se considera *Pre-incremento* (Incrementa en uno, y luego retorna el
+valor); y si el operador se encuentra a la derecha de la variable, se considera
+*Post-incremento* (Retorna el valor, y luego lo incrementa en uno).
+
+``` php
+$length = 6;
+$length++;  // Equivale a la sentencia '$length = $length + 1;'
+```
+
+El operador de *Decremento*, representado por la secuencia `-=`, se usa para
+simplificar la asignación de una sustracción sobre la misma variable.
+
+``` php
+$juegos = 335;
+$juegos -= 20;  // Equivale a la sentencia '$juegos = $juegos - 20;'
+```
+
+El operador de *Decremento unitario*, representado por la secuencia `--`, se
+usa para simplificar la asignación de una sustracción unitaria sobre la misma
+variable. Sin embargo, si el operador se encuentra a la izquierda de la
+variable, se considera *Pre-decremento* (Reduce en uno, y luego retorna el
+valor); y si el operador se encuentra a la derecha de la variable, se considera
+*Post-decremento* (Retorna el valor, y luego lo reduce en uno).
+
+``` php
+$peces = 15;
+$peces--;  // Equivale a la sentencia '$peces = $peces - 1;'
+```
+
+El operador de *Multiplicación*, representado por la secuencia `*=`, se usa
+para simplificar la asignación de una multiplicación sobre la misma variable.
+
+``` php
+$casas = 3;
+$casas *= 3;  // Equivale a la sentencia '$casas = $casas * 3;'
+```
+
+El operador de *División*, representado por la secuencia `/=`, se usa para
+simplificar la asignación de una división sobre la misma variable.
+
+``` php
+$cupcakes = 25;
+$cupcakes /= 5;  // Equivale a la sentencia '$cupcakes = $cupcakes / 5;'
+```
+
+El operador de *Concatenación*, representado por la secuencia `.=`, se usa para
+simplificar la asignación de una concatenación sobre la misma variable.
+
+``` php
+$nombre = "Blanca";
+$nombre .= " Nieves";  // Equivale a la sentencia '$nombre = $nombre . " Nieves";'
+```
+
+A continuación, comparto una tabla resumiendo un poco la información de estos
+operadores.
+
+| Operador | Descripción      |
+|:--------:|:----------------:|
+| `=`      | *Asignación*     |
+| `+=`     | *Incremento*     |
+| `++`     | *Incremento*     |
+| `-=`     | *Decremento*     |
+| `--`     | *Decremento*     |
+| `*=`     | *Multiplicación* |
+| `/=`     | *División*       |
+| `.=`     | *Concatenación*  |
+
+## Precedencia de operadores
+
+La *Precedencia* en PHP es el orden en el que las operaciones aritméticas irán
+calculándose.
+
+<img src="./img/Precedencia 2021-12-30_161012.png" alt="Tabla de Precedencia" />
+
+## Función `var_dump()`
+
+Ayuda con la inspección de código al proporcionar información detallada sobre
+el contenido de una variable pasada como argumento.
+
+``` console
+php > $color = "blue";
+php > var_dump( $color );
+string(4) "blue"
+php >
+```
+
+## Función `print_r()`
+
+Ayuda con la inspección de código al proporcionar información mas fácil para la
+lectura el contenido de una variable pasado como argumento. Pero, disminuyendo
+el detalle al momento de imprimir.
+
+``` console
+php > $color = "blue";
+php > print_r( $color );
+blue
+php >
+```
+
+## Función `readline()`
+
+Ayuda con la recepción de datos entregados por el usuario por medio del
+terminal.
+
+``` console
+php > $edad = readline("Ingrese su edad: ");
+Ingrese su edad: 19
+php > echo $edad;
+19
+php > 
+```
+
+# Referencias
+
+- Plazti. (s.f.). *Curso Básico de PHP: Instalación, Fundamentos y Operadores*.  
+  https://platzi.com/clases/php/
+- Mizaq Screencasts. (8 de marzo de 2020). *Instalar PHP manualmente en Windows 10*.  
+  https://www.youtube.com/watch?v=C2DJtw8Enh0
+- Se usó la *Guía completa markdown y su integración con R*.  
+  (https://rstudio-pubs-static.s3.amazonaws.com/330387_5a40ca72c3b14824acedceb7d34618d1.html)
+- Vaswani, V. (2010). *FUNDAMENTOS DE PHP*. McGraw Hill.
